@@ -15,7 +15,7 @@ import {
 import { Close, Menu as MenuIcon } from '@mui/icons-material';
 
 import LogoSVG from '@/assets/images/LogoSVG';
-import { onlyDesktop, onlyMobile } from '@/utils/hidden';
+import { onlyMobile } from '@/utils/hidden';
 
 const pages = [{
 	label: 'What we do',
@@ -52,23 +52,6 @@ function NavigationBar() {
 							<LogoSVG width='30px' aria-label="" />
 						</Link>
 					</Box>
-
-					<Grid container justifyContent="space-evenly" gap={4} sx={{ ...onlyDesktop }}>
-						{pages.map(({ label, link }) => (
-							<Button
-								key={link}
-								variant='text'
-								component={Link}
-								href={link}
-								LinkComponent={Link}
-								scroll={false}
-								onClick={handleCloseNavMenu}
-								sx={{ my: 2, color: theme.palette.text.primary }}
-							>
-								{label}
-							</Button>
-						))}
-					</Grid>
 
 					<Grid container justifyContent="flex-end" sx={{ ...onlyMobile }}>
 						<IconButton size="large" onClick={handleOpenNavMenu} color="inherit" aria-label="menu">
